@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kokerellen</title>
+
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/components/thumbnailPreview.css">
+</head>
+
+<body class="app">
+  <form class="c-recipe-form" is="js-recipe-form">
+    <fieldset class="c-general-info">
+      <legend>Algemene info</legend>
+
+      <div class="c-input">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" placeholder="Naam recept">
+      </div>
+
+      <div class="c-input">
+        <label for="prepTime">Bereidingstijd</label>
+        <input type="text" id="prepTime" name="prepTime" placeholder="60min">
+      </div>
+
+      <div class="c-input">
+        <label for="servings">Aantal porties</label>
+        <input type="text" id="servings" name="servings" placeholder="4 personen">
+      </div>
+
+      <div class="c-input">
+        <label for="thumbnail">Foto</label>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" capture="environment">
+      </div>
+
+      <img id="thumbnail-preview" class="c-thumbnail-preview" src="" alt="">
+    </fieldset>
+
+    <fieldset class="c-ingredients">
+      <legend>Ingrediënten</legend>
+
+      <ul class="c-ingredients-list">
+        <li class="c-ingredients-item">
+          <div class="c-input c-input-ingredient">
+            <input type="text" name="ingredients[]" placeholder="Ingrediënt">
+          </div>
+
+          <button type="button" class="c-button c-button-remove">verwijder</button>
+        </li>
+      </ul>
+
+      <button type="button" id="add-ingredient" class="c-button c-button-add">Nieuw ingrediënt toevoegen</button>
+    </fieldset>
+
+    <fieldset class="c-steps">
+      <legend>Bereiding</legend>
+
+      <ul class="c-steps-list">
+        <li class="c-step-item">
+          <div class="c-input c-input-step">
+            <input type="text" name="steps[]" placeholder="Beschrijving">
+          </div>
+
+          <button type="button" class="c-button c-button-remove">verwijder</button>
+        </li>
+      </ul>
+
+      <button id="add-step" type="button" class="c-button c-button-add">Nieuwe stap toevoegen</button>
+    </fieldset>
+
+    <button id="render-recipie" type="submit" class="c-button">Bekijk recept</button>
+  </form>
+
+  <script type="module" src="./javascript/index.js"></script>
+</body>
+
+</html>
